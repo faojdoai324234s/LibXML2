@@ -1,7 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-set LIBXMLVERSION = "libxml2-2.13.6"
 set PROGFILES=%ProgramFiles%
 if not "%ProgramFiles(x86)%" == "" set PROGFILES=%ProgramFiles(x86)%
 
@@ -43,12 +42,12 @@ if [%1]==[-static] (
 echo "Path to vcvarsall.bat: %VCVARSALLPATH%"
 call %VCVARSALLPATH% x64
 
-cmake -E tar xf %LIBXMLVERSION%.tar.xz
-cmake -S %LIBXMLVERSION% -B %LIBXMLVERSION%-build BUILD_SHARED_LIBS=ON CMAKE_BUILD_TYPE=Debug LIBXML2_WITH_ICONV=OFF LIBXML2_WITH_PYTHON=OFF
-cmake --build %LIBXMLVERSION%-build
-cmake --install %LIBXMLVERSION%-build
+cmake -E tar xf libxml2-2.13.6.tar.xz
+cmake -S libxml2-2.13.6 -B libxml2-2.13.6-build BUILD_SHARED_LIBS=ON CMAKE_BUILD_TYPE=Debug LIBXML2_WITH_ICONV=OFF LIBXML2_WITH_PYTHON=OFF
+cmake --build libxml2-2.13.6-build
+cmake --install libxml2-2.13.6-build
 
-cd D:\a\LibXML2\LibXML2\%LIBXMLVERSION%\build
+cd D:\a\LibXML2\LibXML2\libxml2-2.13.6\build
 dir /s
 
 :end
