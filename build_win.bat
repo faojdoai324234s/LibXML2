@@ -43,7 +43,8 @@ echo "Path to vcvarsall.bat: %VCVARSALLPATH%"
 call %VCVARSALLPATH% x64
 
 cmake -E tar xf libxml2-2.13.6.tar.xz
-cmake -S libxml2-2.13.6 -B libxml2-2.13.6-build BUILD_SHARED_LIBS=ON CMAKE_BUILD_TYPE=Debug LIBXML2_WITH_ICONV=OFF LIBXML2_WITH_PYTHON=OFF
+cmake -D BUILD_SHARED_LIBS=ON CMAKE_BUILD_TYPE=Debug LIBXML2_WITH_ICONV=OFF LIBXML2_WITH_PYTHON=OFF
+cmake -S libxml2-2.13.6 -B libxml2-2.13.6-build
 cmake --build libxml2-2.13.6-build
 cmake --install libxml2-2.13.6-build
 
