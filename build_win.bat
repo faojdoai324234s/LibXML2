@@ -24,7 +24,7 @@ goto end
 
 REM Download latest libXML2 and rename to libxml.zip
 echo Downloading curl...
-powershell -command "(new-object System.Net.WebClient).DownloadFile('https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz')"
+powershell -command "(new-object System.Net.WebClient).DownloadFile('https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz','libxml2-2.13.6.tar.xz')"
 
 REM Extract downloaded zip file to tmp_libcurl
 REM "C:\Program Files\7-Zip\7z.exe" x libxml.zip -y -otmp_libxml
