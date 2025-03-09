@@ -15,7 +15,7 @@ cmake --build build --config Debug
 cmake --install build
 
 # Copy over the built files
-cp build/libxml2d.dylib upload/Debug
+cp build/libxml2.dylib upload/Debug/libxml2d.dylib
 
 # Clean up before we run CMake again
 rm -rf build
