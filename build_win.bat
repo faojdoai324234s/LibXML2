@@ -8,7 +8,7 @@ mkdir upload\Release
 
 REM Download latest libXML2
 git clone https://github.com/GNOME/libxml2
-
+dir
 REM Build Debug configuration
 cmake -S GNOME\libxml2 -B build -D LIBXML2_WITH_ICONV=OFF -D LIBXML2_WITH_PYTHON=OFF
 cmake --build build --config Debug
