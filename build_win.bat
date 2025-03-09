@@ -10,7 +10,7 @@ REM Download latest libXML2
 git clone https://github.com/GNOME/libxml2
 
 REM Build Debug configuration
-cmake -S libxml2 -B build -D LIBXML2_WITH_ICONV=OFF -D LIBXML2_WITH_PYTHON=OFF
+cmake -S libxml2 -B build -D LIBXML2_WITH_ICONV=OFF -D LIBXML2_WITH_PYTHON=OFF -D CMAKE_BUILD_TYPE=Debug
 cmake --build build --config Debug
 cmake --install build
 
@@ -23,7 +23,7 @@ REM Clean up before we run CMake again
 rmdir /s /q build
 
 REM Build Release configuration
-cmake -S libxml2 -B build -D LIBXML2_WITH_ICONV=OFF -D LIBXML2_WITH_PYTHON=OFF
+cmake -S libxml2 -B build -D LIBXML2_WITH_ICONV=OFF -D LIBXML2_WITH_PYTHON=OFF -D CMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 cmake --install build
 
