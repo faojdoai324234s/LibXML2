@@ -13,7 +13,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v4
-      - name: Download and build LibXML
+      - name: Build LibXML2
         shell: cmd
         run: build_win.bat
         
@@ -21,6 +21,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Windows-artifact
-          path: D:\a\LibXML2\LibXML2
+          path: ${{github.workspace}}/upload
           if-no-files-found: ignore
           retention-days: 0
